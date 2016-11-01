@@ -1,0 +1,115 @@
+{
+   "customerName": "Jim Smith",
+   "bankName": "Digi Bank",
+
+   "_links": {
+      "self": {
+         "href": "resources/banking/main.json"
+      },
+      "http://rels.test.com/banking/accounts": {
+         "href": "resources/banking/accounts.json"
+      },
+      "curies": [
+         {
+            "name": "banking",
+            "href": "http://rels.test.com/banking/{rel}",
+            "templated": true
+         }
+      ]
+   },
+
+   "_embedded": {
+      "banking:accounts": [
+         {
+            "accountNumber": "12345",
+            "type": "checking",
+            "balance": 150.0,
+            "_links": {
+               "self": {
+                  "href": "resources/banking/account-12345.json"
+               },
+               "banking:transactions": {
+                  "href": "resources/banking/account-12345-transactions.json"
+               },
+               "banking:deposit": {
+                  "href": "resources/banking/account-12345/deposits"
+               },
+               "banking:withdraw": {
+                  "href": "resources/banking/account-12345/withdrawls"
+               },
+               "banking:transfer": {
+                  "href": "resources/banking/account-12345/transfers"
+               },
+               "banking:accounts": {
+                  "href": "resources/banking/accounts.json"
+               },
+               "curies": [
+                  {
+                     "name": "banking",
+                     "href": "http://rels.test.com/banking/{rel}",
+                     "templated": true
+                  }
+               ]
+            }
+         },
+         {
+            "accountNumber": "98765",
+            "type": "savings",
+            "balance": 1000.0,
+            "_links": {
+               "self": {
+                  "href": "resources/banking/account-98765.json"
+               },
+               "banking:transactions": {
+                  "href": "resources/banking/account-98765-transactions.json"
+               },
+               "banking:deposit": {
+                  "href": "resources/banking/account-98765/deposits"
+               },
+               "banking:withdraw": {
+                  "href": "resources/banking/account-98765/withdrawls"
+               },
+               "banking:transfer": {
+                  "href": "resources/banking/account-98765/transfers"
+               },
+               "banking:accounts": {
+                  "href": "resources/banking/accounts.json"
+               },
+               "curies": [
+                  {
+                     "name": "banking",
+                     "href": "http://rels.test.com/banking/{rel}",
+                     "templated": true
+                  }
+               ]
+            }
+         },
+         {
+            "accountNumber": "65748",
+            "type": "savings",
+            "balance": 15000.0,
+            "_links": {
+               "self": {
+                  "href": "resources/banking/account-65748.json"
+               },
+               "banking:transactions": {
+                  "href": "resources/banking/account-65748-transactions.json"
+               },
+               "banking:deposit": {
+                  "href": "resources/banking/account-65748/deposits"
+               },
+               "banking:accounts": {
+                  "href": "resources/banking/accounts.json"
+               },
+               "curies": [
+                  {
+                     "name": "banking",
+                     "href": "http://rels.test.com/banking/{rel}",
+                     "templated": true
+                  }
+               ]
+            }
+         }
+      ]
+   }
+}

@@ -1,0 +1,44 @@
+{
+   "accountNumber": "65748",
+   "type": "savings",
+   "balance": 15000.0,
+   "_links": {
+      "self": {
+         "href": "resources/banking/account-65748-transactions.json"
+      },
+      "banking:transactions": {
+         "href": "resources/banking/account-65748-transactions.json"
+      },
+      "banking:deposit": {
+         "href": "resources/banking/account-65748/deposits"
+      },
+      "banking:accounts": {
+         "href": "resources/banking/accounts.json"
+      },
+      "curies": [
+         {
+            "name": "banking",
+            "href": "http://rels.test.com/banking/{rel}",
+            "templated": true
+         }
+      ]
+   },
+   "_embedded": {
+      "banking:transactions": [
+         {
+            "accountNumber": "65748",
+            "date": "2016-08-21",
+            "description": "Account opened",
+            "type": "credit",
+            "amount": 10000.0
+         },
+         {
+            "accountNumber": "65748",
+            "date": "2016-08-25",
+            "description": "Deposit 5000.0 from bonus",
+            "type": "credit",
+            "amount": 5000.0
+         }
+      ]
+   }
+}

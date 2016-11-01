@@ -1,0 +1,20 @@
+{
+   "transactionId": 1,
+   "accountNumber": "12345",
+   "date": "2016-08-09",
+   "description": "Account opened",
+   "type": "credit",
+   "amount": 250.0,
+   "_links": {
+      "self": {
+         "href": "resources/banking/transactions/1.json"
+      },
+      "curies": [
+         {
+            "name": "banking",
+            "href": "http://rels.test.com/banking/{rel}",
+            "templated": true
+         }
+      ]
+   }
+}

@@ -1,0 +1,50 @@
+{
+   "name": "Isaac Asimov",
+
+   "_links": {
+      "self": {
+         "href": "/"
+      },
+      "books:books": {
+         "href": "/books/asimov"
+      },
+      "curies": [
+         {
+            "name": "books",
+            "href": "http://rels.test.com/books/{rel}",
+            "templated": true
+         }
+      ]
+   },
+   "_embedded": {
+      "books:books": [
+         {
+            "title": "Foundation",
+            "published": "1951",
+            "_links": {
+               "self": {
+                  "href": "/books/foundation"
+               }
+            }
+         },
+         {
+            "title": "Foundation and Empire",
+            "published": "1952",
+            "_links": {
+               "self": {
+                  "href": "/books/foundation-and-empire"
+               }
+            }
+         },
+         {
+            "title": "Second Foundation",
+            "published": "1953",
+            "_links": {
+               "self": {
+                  "href": "/books/second-foundation"
+               }
+            }
+         }
+      ]
+   }
+}

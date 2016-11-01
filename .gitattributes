@@ -1,0 +1,15 @@
+* text=auto eol=lf
+
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.ttf binary
+*.eot binary
+*.woff binary
+
+*.jar -text
+*.zip -text
+
+*.bat eol=crlf
+*.cmd eol=crlf

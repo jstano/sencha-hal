@@ -1,0 +1,57 @@
+{
+   "accountNumber": "98765",
+   "type": "savings",
+   "balance": 1000.0,
+   "_links": {
+      "self": {
+         "href": "resources/banking/account-98765-transactions.json"
+      },
+      "banking:transactions": {
+         "href": "resources/banking/account-98765-transactions.json"
+      },
+      "banking:deposit": {
+         "href": "resources/banking/account-98765/deposits"
+      },
+      "banking:withdraw": {
+         "href": "resources/banking/account-98765/withdrawls"
+      },
+      "banking:transfer": {
+         "href": "resources/banking/account-98765/transfers"
+      },
+      "banking:accounts": {
+         "href": "resources/banking/accounts.json"
+      },
+      "curies": [
+         {
+            "name": "banking",
+            "href": "http://rels.test.com/banking/{rel}",
+            "templated": true
+         }
+      ]
+   },
+   "_embedded": {
+      "banking:transactions": [
+         {
+            "accountNumber": "98765",
+            "date": "2016-08-21",
+            "description": "Account opened",
+            "type": "credit",
+            "amount": 850.0
+         },
+         {
+            "accountNumber": "98765",
+            "date": "2016-08-25",
+            "description": "Deposit 300.0",
+            "type": "credit",
+            "amount": 300.0
+         },
+         {
+            "accountNumber": "98765",
+            "date": "2016-08-21",
+            "description": "Withdraw 150.0 for car repairs",
+            "type": "debit",
+            "amount": 150.0
+         }
+      ]
+   }
+}

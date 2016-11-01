@@ -1,0 +1,20 @@
+{
+   "transactionId": 3,
+   "accountNumber": "12345",
+   "date": "2016-08-17",
+   "description": "Deposit 75.0 (Uber)",
+   "type": "credit",
+   "amount": 75.0,
+   "_links": {
+      "self": {
+         "href": "resources/banking/accounts-12345-transactions.json"
+      },
+      "curies": [
+         {
+            "name": "banking",
+            "href": "http://rels.test.com/banking/{rel}",
+            "templated": true
+         }
+      ]
+   }
+}

@@ -1,0 +1,20 @@
+{
+   "transactionId": 2,
+   "accountNumber": "12345",
+   "date": "2016-08-12",
+   "description": "Withdraw 125.0 for groceries",
+   "type": "debit",
+   "amount": 125.0,
+   "_links": {
+      "self": {
+         "href": "resources/banking/accounts-12345-transactions.json"
+      },
+      "curies": [
+         {
+            "name": "banking",
+            "href": "http://rels.test.com/banking/{rel}",
+            "templated": true
+         }
+      ]
+   }
+}
