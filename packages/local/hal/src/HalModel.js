@@ -110,6 +110,13 @@ Ext.define('Ext.ux.hal.HalModel', {
       return Ext.getClass(this).load(link.href, options, null);
    },
 
+   /**
+    * Get the links from the HAL model as a Store.
+    *
+    * @param {String} [rel] The rel whose links are to be retrieved.
+    *
+    * @return {HalLiunks} A HalLinks object containing the links.
+    */
    getLinks: function(rel) {
       var links = this.getLink(rel);
 
@@ -123,6 +130,13 @@ Ext.define('Ext.ux.hal.HalModel', {
       return Ext.create("Ext.ux.hal.HalLinks", links);
    },
 
+   /**
+    * Get the links from the HAL model as a Store.
+    *
+    * @param {String} [rel] The rel whose links are to be retrieved.
+    *
+    * @return {Store} The store containing the link objects.
+    */
    getLinksAsStore: function(rel) {
       var links = this.getLink(rel);
 
@@ -146,6 +160,14 @@ Ext.define('Ext.ux.hal.HalModel', {
       });
    },
 
+   /**
+    * Get embedded data from the HalModel as an Array of HalModel objects
+    *
+    * @param {Object} [ModelType] The class instance of the HalModel.
+    * @param {String} [rel] The rel whose links are to be retrieved.
+    *
+    * @return {Array} The array containing the embedded HalModel objects.
+    */
    getEmbeddedAsArray: function(ModelType, rel) {
       if (!this._embedded) {
          return [];
@@ -180,6 +202,40 @@ Ext.define('Ext.ux.hal.HalModel', {
       return result;
    },
 
+   /**
+    * Get embedded data from the HalModel as a Store containing HalModel objects
+    *
+    * @param {Object} [ModelType] The class instance of the HalModel.
+    * @param {String} [rel] The rel whose links are to be retrieved.
+    *
+    * @return {Store} The store containing the embedded HalModel objects.
+    */
+   getEmbeddedAsStore: function(ModelType, rel) {
+      var rawData = this._embedded ? this._embedded[Ext.ux.hal.rels.HalCurieRegister.deserialize(rel)] : [];
+
+      if (!Ext.isArray(rawData)) {
+         rawData = [rawData];
+      }
+
+      return Ext.create('Ext.ux.hal.HalStore', {
+         model: ModelType,
+         data: Ext.clone(rawData),
+         proxy: {
+            type: 'memory',
+            reader: {
+               type: 'hal'
+            },
+            writer: {
+               writeAllFields: true,
+               writeRecordId: false
+            }
+         },
+         load: function(options) {
+            return this.loadRawData(Ext.clone(rawData));
+         }
+      });
+   },
+
    getEmbedded: function(ModelType, rel) {
       return this.getEmbeddedAt(ModelType, rel, 0, null);
    },
@@ -208,32 +264,6 @@ Ext.define('Ext.ux.hal.HalModel', {
       model.phantom = !(model.id && model._links && model._links['self']);
 
       return model;
-   },
-
-   getEmbeddedAsStore: function(ModelType, rel) {
-      var rawData = this._embedded ? this._embedded[Ext.ux.hal.rels.HalCurieRegister.deserialize(rel)] : [];
-
-      if (!Ext.isArray(rawData)) {
-         rawData = [rawData];
-      }
-
-      return Ext.create('Ext.ux.hal.HalStore', {
-         model: ModelType,
-         data: Ext.clone(rawData),
-         proxy: {
-            type: 'memory',
-            reader: {
-               type: 'hal'
-            },
-            writer: {
-               writeAllFields: true,
-               writeRecordId: false
-            }
-         },
-         load: function(options) {
-            return this.loadRawData(Ext.clone(rawData));
-         }
-      });
    },
 
    load: function(options) {
