@@ -6,7 +6,7 @@
       "self": {
          "href": "resources/banking/main.json"
       },
-      "http://rels.test.com/banking/accounts": {
+      "banking:accounts": {
          "href": "resources/banking/accounts.json"
       },
       "curies": [
