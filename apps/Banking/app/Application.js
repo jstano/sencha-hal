@@ -7,9 +7,6 @@ Ext.define('Banking.Application', {
       'Ext.ux.hal.rels.HalCurieRegister'
    ],
 
-   stores: [
-   ],
-
    launch: function () {
       Ext.ux.hal.rels.HalCurieRegister.registerCurie('banking', 'http://rels.test.com/banking/{rel}');
    },
